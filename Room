@@ -1,7 +1,3 @@
-
-package Group_Project;
-
-
 public class Room {
     
     public int bedOption;
@@ -10,7 +6,7 @@ public class Room {
     public int accessibleOption;
     public int roomNumber;
     private int roomID;
-    private int roomBookQuantity;
+    public int roomBookQuantity;
     private boolean roomBooked;
     public double roomCostPerNight;
     public static int nextID = 0;
@@ -22,21 +18,55 @@ public class Room {
         this.coffeeOption = coffee;
         this.accessibleOption = accessibility;
         this.roomNumber = roomNumber;
-                                            //NEED MORE??
+        this.roomID = nextID;
+        this.roomBookQuantity = 0;
+        nextID++;            
+        
+    }
+
+    Room() {
+    
+      
     }
     
     public boolean bookRoom(){
         //IF BOOKED RETURN FALSE else roomBooked = True
-        return ; //ADD TO RETURN 
-    }
+        
+        if(roomBooked)
+            this.roomBooked=false;
+        else{
+            this.roomBooked = true;
+              
+        }
+        return this.roomBooked;    }
     
     public void freeThisRoom(){
-        //Set roomBooked flag to false
+        roomBooked = false;
     }
     
-    public String toString(){
+    public int getRoomBookedQuantity(){
+        return this.roomBookQuantity;    //Need to add
+    }
+    
+    public int getRoomID(){
+        return this.roomID;
+    }
+    
+    public int getRoomNumber(){
+        return this.roomNumber;
+    }
+    
+    public String roomAnalytics(){
         String returnString = "";
-        returnString += "Room #: " + this.roomNumber;
+        returnString += "Room#: " + this.getRoomNumber();
+        returnString += ", Times Booked: " + this.getRoomBookedQuantity();
+        returnString += ", Room Booked: " + this.bookRoom();
+        return returnString;
+    }
+    
+    public String roomDescription(){
+        String returnString = "";
+        returnString += "Room #: " + this.getRoomNumber();
         returnString += "Bed Option: " + this.bedOption;
         returnString += ", Kitchen: " + this.kitchenOption;
         returnString += ", Coffee Option: " + this.coffeeOption;
@@ -44,5 +74,12 @@ public class Room {
         
         return returnString;
     }
+    
+    public void setRoomNumber(int roomNumber){
+        this.roomNumber = roomNumber;
+    }
+    public void incrementBookedCount(){
+    this.roomBookQuantity++;
+}
     
 }
