@@ -1,46 +1,19 @@
-package Group_Project;
+
+package Project;
 
 /**
  *
- * @author Brent
+ * @author Chris
  */
-public class ValueGuest extends Guest{
+    public class ValueGuest extends Guest{
     private String savingsNumber;
     private int numberOfBookings;
     private double amountSpentWithHotel;
     
     public ValueGuest(String username, String password, String guestName){
-        
-                //NEEDS WORK
-    }
-    
-    public double getAmountSpentWithHotel(){
-        return this.amountSpentWithHotel;
-    }
-    
-    public int getNumberOfBookings(){
-        return this.numberOfBookings;
-    }
-    
-    public String getSavingsNumber(){
-        return this.savingsNumber;
-    }
-    
-} */
-package Group_Project;
-
-/**
- *
- * @author Brent
- */
-public class ValueGuest extends Guest{
-    private String savingsNumber;
-    private int numberOfBookings;
-    private double amountSpentWithHotel;
-    
-    public ValueGuest(String username, String password, String guestName){
-        
-                //NEEDS WORK
+        this.username=username;
+        this.password=password;
+        this.guestName=guestName;
     }
     
     public double getAmountSpentWithHotel(){
